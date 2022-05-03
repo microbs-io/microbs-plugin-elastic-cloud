@@ -1,0 +1,32 @@
+apiVersion: skaffold/v2beta27
+kind: Config
+build:
+  tagPolicy:
+    customTemplate:
+      template: "{{.GIT_COMMIT}}"
+      components:
+      - name: GIT_COMMIT
+        gitCommit: {}
+
+
+####  Main  ####################################################################
+
+profiles:
+- name: main
+  build:
+    artifacts:
+    - image: microbs-filebeat
+      context: ./services/filebeat
+    - image: microbs-heartbeat
+      context: ./services/heartbeat
+    - image: microbs-metricbeat
+      context: ./services/metricbeat
+    - image: microbs-otel-collector
+      context: ./services/otel-collector
+  deploy:
+    kubectl:
+      manifests:
+      - ./services/filebeat/k8s/*.yaml
+      - ./services/heartbeat/k8s/*.yaml
+      - ./services/metricbeat/k8s/*.yaml
+      - ./services/otel-collector/k8s/*.yaml
