@@ -1,6 +1,6 @@
 {
   "name": "@microbs.io/plugin-elastic-cloud",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "microbs plugin - elastic-cloud",
   "license": "Apache-2.0",
   "url": "https://microbs.io/docs/plugins/observability/elastic-cloud/",

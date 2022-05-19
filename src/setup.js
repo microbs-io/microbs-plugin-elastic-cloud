@@ -53,7 +53,7 @@ module.exports = async () => {
   if (!deploymentExists) {
     logger.info('')
     logger.info('Creating Elastic Cloud deployment...')
-    var filepath = path.join(constants.pluginHome(), 'assets', 'elastic_cloud_deployment_template.json')
+    var filepath = path.join(constants.pluginHome(), 'src', 'assets', 'elastic_cloud_deployment_template.json')
     var deployment_template = utils.loadTemplateJson(filepath, config.get())
     var response
     try {

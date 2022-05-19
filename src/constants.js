@@ -13,7 +13,7 @@ const { config, context } = require('@microbs.io/core')
 /**
  * Absolute path to the directory of this plugin.
  */
-module.exports.pluginHome = () => context.get('path.plugins.observability')
+module.exports.pluginHome = () => context.get('path.plugin.observability')
 
 /**
  * Shorthand for setting Elastic Cloud API headers.
